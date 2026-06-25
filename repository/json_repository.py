@@ -1,6 +1,11 @@
+import json
+
 class JsonRepository:
     def ladeDaten(self):
-        pass
+        with open("data/studiengang.json", "r") as datei:
+            daten = json.load(datei)
+
+        return daten
 
     def speichereDaten(self):
-        pass
+        print("Daten werden gespeichert")

@@ -1,3 +1,3 @@
 class DashboardView:
     def zeigeDashboard(self):
-        pass
+        print("Dashboard wird angezeigt")

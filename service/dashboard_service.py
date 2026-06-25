@@ -1,9 +1,9 @@
 class DashboardService:
     def berechneFortschritt(self):
-        pass
+        print("Fortschritt wird berechnet")
 
     def berechneNotendurchschnitt(self):
-        pass
+        print("Notendurchschnitt wird berechnet")
 
     def prognostiziereAbschluss(self):
-        pass
+        print("Abschluss wird prognostiziert")
