@@ -15,10 +15,8 @@ class DashboardController:
 
         daten = self.repository.ladeDaten()
 
-        studiengang = Studiengang(daten["name"],daten["gesamt_ects"])
+        studiengang = Studiengang(daten["name"],daten["gesamt_ects"],daten["semester"])
 
-        print(studiengang.name)
-        print(studiengang.gesamt_ects)
-
-        self.service.berechneFortschritt()
-        self.view.zeigeDashboard()
+        erreichte_ects, fortschritt = self.service.berechneFortschritt(studiengang)
+        notendurchschnitt = self.service.berechneNotendurchschnitt(studiengang)
+        self.view.zeigeDashboard(studiengang, erreichte_ects, fortschritt, notendurchschnitt)
