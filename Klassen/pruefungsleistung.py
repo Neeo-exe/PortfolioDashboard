@@ -1,5 +1,6 @@
 class Pruefungsleistung:
-    def __init__(self, note: float):
+
+    def __init__(self, note):
         self.note = note
 
     @property

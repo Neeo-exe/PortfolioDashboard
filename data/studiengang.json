@@ -1,84 +1,43 @@
-{"name": "Cyber Security","gesamt_ects": 180, "semester": [
-    
+{"student": {"name": "Kevin","studienbeginn": "2026-01-05"},"studiengang": {"name": "Cyber Security","gesamt_ects": 180,"semester": [
     {"nummer": 1,"module": [
-        
-        {"titel": "Betriebssysteme, Rechnernetze und verteilte Systeme","ects": 5,"status": "BESTANDEN","pruefungsleistung": {"note": 3.3}},
-          
-        {"titel": "Einführung in Datenschutz und IT-Sicherheit","ects": 5,"status": "BESTANDEN","pruefungsleistung": {"note": 1.7}},
-        
-        {"titel": "Einführung in die Programmierung mit Python","ects": 5,"status": "BESTANDEN","pruefungsleistung": {"note": 1.7}},
-        
-        {"titel": "Einführung in das wissenschaftliche Arbeiten für IT und Technik","ects": 5,"status": "BESTANDEN","pruefungsleistung": {"note": 1.3}},
-        
-        {"titel": "Projekt: Objektorientierte und funktionale Programmierung mit Python","ects": 5,"status": "IN_BEARBEITUNG","pruefungsleistung": null},
-
-        {"titel":"WAHLPFLICHTBEREICH C (Praktikum)","ects":5,"status":"BESTANDEN","anerkannt":true,"pruefungsleistung":null}]},
-
-
-    {"nummer": 2,"module":[
-
+        {"titel":"Betriebssysteme, Rechnernetze und verteilte Systeme","ects":5,"status":"BESTANDEN","pruefungsleistung":{"note":3.3}},
+        {"titel":"Einführung in Datenschutz und IT-Sicherheit","ects":5,"status":"BESTANDEN","pruefungsleistung":{"note":1.7}},
+        {"titel":"Einführung in die Programmierung mit Python","ects":5,"status":"BESTANDEN","pruefungsleistung":{"note":1.7}},
+        {"titel":"Einführung in das wissenschaftliche Arbeiten für IT und Technik","ects":5,"status":"BESTANDEN","pruefungsleistung":{"note":1.3}},
+        {"titel":"Projekt: Objektorientierte und funktionale Programmierung mit Python","ects":5,"status":"IN_BEARBEITUNG","pruefungsleistung":null},
+        {"titel":"WAHLPFLICHTBEREICH C (Praktikum)","wahlpflichtbereich":"C","ects":5,"status":"BESTANDEN","anerkannt":true,"pruefungsleistung":null}]},
+    {"nummer": 2,"module": [
         {"titel":"Einführung in die Netzwerkforensik","ects":5,"status":"IN_BEARBEITUNG","pruefungsleistung":null},
-        
         {"titel":"Mathematik Grundlagen I","ects":5,"status":"OFFEN","pruefungsleistung":null},
-        
         {"titel":"Statistik - Wahrscheinlichkeit und deskriptive Statistik I","ects":5,"status":"OFFEN","pruefungsleistung":null},
-        
         {"titel":"Requirements Engineering","ects":5,"status":"OFFEN","pruefungsleistung":null},
-        
         {"titel":"Projekt: Agiles Projektmanagement","ects":5,"status":"BESTANDEN","anerkannt":true,"pruefungsleistung":null},
-
-        {"titel":"WAHLPFLICHTBEREICH C (Praktikum)","ects":5,"status":"BESTANDEN","anerkannt":true,"pruefungsleistung":null}]},
-
-    {"nummer": 3,"module":[
-        
+        {"titel":"WAHLPFLICHTBEREICH C (Praktikum)","wahlpflichtbereich":"C","ects":5,"status":"BESTANDEN","anerkannt":true,"pruefungsleistung":null}]},
+    {"nummer": 3,"module": [
         {"titel":"Grundzüge des System-Pentestings","ects":5,"status":"OFFEN","pruefungsleistung":null},
-        
         {"titel":"Theoretische Informatik und Mathematische Logik","ects":5,"status":"OFFEN","pruefungsleistung":null},
-        
         {"titel":"Social Engineering und Insider Threats","ects":5,"status":"OFFEN","pruefungsleistung":null},
-        
         {"titel":"Technische und betriebliche IT-Sicherheitskonzeptionen","ects":5,"status":"OFFEN","pruefungsleistung":null},
-        
         {"titel":"Projekt: Social Engineering","ects":5,"status":"OFFEN","pruefungsleistung":null},
-
-        {"titel":"WAHLPFLICHTBEREICH C (Praktikum)","ects":5,"status":"BESTANDEN","anerkannt":true,"pruefungsleistung":null}]},
-
-    {"nummer": 4,"module":[
-        
+        {"titel":"WAHLPFLICHTBEREICH C (Praktikum)","wahlpflichtbereich":"C","ects":5,"status":"BESTANDEN","anerkannt":true,"pruefungsleistung":null}]},
+    {"nummer": 4,"module": [
         {"titel":"DevSecOps und gängige Software-Schwachstellen","ects":5,"status":"OFFEN","pruefungsleistung":null},
-        
         {"titel":"Kryptografische Verfahren","ects":5,"status":"OFFEN","pruefungsleistung":null},
-        
         {"titel":"Host- und Softwareforensik","ects":5,"status":"OFFEN","pruefungsleistung":null},
-        
         {"titel":"Seminar: Aktuelle Themen in Computer Science","ects":5,"status":"OFFEN","pruefungsleistung":null},
-        
         {"titel":"Projekt: Einsatz und Konfiguration von SIEM-Systemen","ects":5,"status":"OFFEN","pruefungsleistung":null},
-        
-        {"titel":"WAHLPFLICHTBEREICH C (Praktikum)","ects":5,"status":"BESTANDEN","anerkannt":true,"pruefungsleistung":null}]},
-
-    {"nummer": 5,"module":[
-        
+        {"titel":"WAHLPFLICHTBEREICH C (Praktikum)","wahlpflichtbereich":"C","ects":5,"status":"BESTANDEN","anerkannt":true,"pruefungsleistung":null}]},
+    {"nummer": 5,"module": [
         {"titel":"Threat Modeling","ects":5,"status":"OFFEN","pruefungsleistung":null},
-        
         {"titel":"Standards der Informationssicherheit","ects":5,"status":"OFFEN","pruefungsleistung":null},
-        
-        {"titel":"WAHLPFLICHTBEREICH A","ects":5,"status":"BESTANDEN","anerkannt":true,"pruefungsleistung":null},
-        
-        {"titel":"WAHLPFLICHTBEREICH A","ects":5,"status":"OFFEN","pruefungsleistung":null},
-        
+        {"titel":"WAHLPFLICHTBEREICH A","wahlpflichtbereich":"A","ects":5,"status":"BESTANDEN","anerkannt":true,"pruefungsleistung":null},
+        {"titel":"WAHLPFLICHTBEREICH A","wahlpflichtbereich":"A","ects":5,"status":"OFFEN","pruefungsleistung":null},
         {"titel":"Projekt: Threat Modeling","ects":5,"status":"OFFEN","pruefungsleistung":null},
-
-        {"titel":"WAHLPFLICHTBEREICH C (Praktikum)","ects":5,"status":"BESTANDEN","anerkannt":true,"pruefungsleistung":null}]},
-
-    {"nummer": 6,"module":[
-        
-        {"titel":"WAHLPFLICHTBEREICH B","ects":5,"status":"OFFEN","pruefungsleistung":null},
-        
-        {"titel":"WAHLPFLICHTBEREICH B","ects":5,"status":"OFFEN","pruefungsleistung":null},
-        
+        {"titel":"WAHLPFLICHTBEREICH C (Praktikum)","wahlpflichtbereich":"C","ects":5,"status":"BESTANDEN","anerkannt":true,"pruefungsleistung":null}]},
+    {"nummer": 6,"module": [
+        {"titel":"WAHLPFLICHTBEREICH B","wahlpflichtbereich":"B","ects":5,"status":"BESTANDEN","anerkannt":true,"pruefungsleistung":null},
+        {"titel":"WAHLPFLICHTBEREICH B","wahlpflichtbereich":"B","ects":5,"status":"OFFEN","pruefungsleistung":null},
         {"titel":"Projekt: Allgemeine Programmierung mit C/C++","ects":5,"status":"OFFEN","pruefungsleistung":null},
-
-        {"titel":"WAHLPFLICHTBEREICH C (Praktikum)","ects":5,"status":"BESTANDEN","anerkannt":true,"pruefungsleistung":null}]}]}
+        {"titel":"WAHLPFLICHTBEREICH C (Praktikum)","wahlpflichtbereich":"C","ects":5,"status":"BESTANDEN","anerkannt":true,"pruefungsleistung":null}]}]}}
         
         

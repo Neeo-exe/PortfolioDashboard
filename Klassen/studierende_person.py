@@ -1,5 +1,6 @@
 class StudierendePerson:
-    def __init__(self, name: str, studienbeginn, studiengang):
+
+    def __init__(self, name, studienbeginn):
         self.name = name
         self.studienbeginn = studienbeginn
-        self.studiengang = studiengang
+        self.studiengang = None

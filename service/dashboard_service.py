@@ -1,34 +1,109 @@
+from datetime import datetime
+
 class DashboardService:
-    
+
     def berechneFortschritt(self, studiengang):
-        print("Fortschritt wird berechnet")
 
         erreichte_ects = 0
 
         for semester in studiengang.semester:
-            for modul in semester["module"]:
-                if modul["status"] == "BESTANDEN":
-                    erreichte_ects += modul["ects"]
+            for modul in semester.module:
+                if modul.status == "BESTANDEN":
+                    erreichte_ects += modul.ects
 
         fortschritt = (erreichte_ects / studiengang.gesamt_ects) * 100
 
         return erreichte_ects, round(fortschritt, 2)
 
+    def berechneModule(self, studiengang):
+
+        abgeschlossene_module = 0
+        gesamt_module = 0
+
+        wahlpflichtbereiche = []
+
+        for semester in studiengang.semester:
+            for modul in semester.module:
+
+                if modul.wahlpflichtbereich is not None:
+
+                    if modul.wahlpflichtbereich not in wahlpflichtbereiche:
+                        wahlpflichtbereiche.append(modul.wahlpflichtbereich)
+                        gesamt_module += 1
+
+                        if modul.status == "BESTANDEN":
+                            abgeschlossene_module += 1
+
+                else:
+
+                    gesamt_module += 1
+
+                    if modul.status == "BESTANDEN":
+                        abgeschlossene_module += 1
+
+        return abgeschlossene_module, gesamt_module
+
     def berechneNotendurchschnitt(self, studiengang):
-        print("Notendurchschnitt wird berechnet")
 
         notensumme = 0
         anzahl_noten = 0
 
         for semester in studiengang.semester:
-            for modul in semester["module"]:
-                if modul["pruefungsleistung"] != None:
-                    notensumme += modul["pruefungsleistung"]["note"]
+            for modul in semester.module:
+
+                if modul.pruefungsleistung is not None:
+                    notensumme += modul.pruefungsleistung.note
                     anzahl_noten += 1
 
         durchschnitt = notensumme / anzahl_noten
 
         return round(durchschnitt, 2)
 
-    def prognostiziereAbschluss(self, studiengang):
-        print("Abschluss wird prognostiziert")
+    def prognostiziereAbschluss(self, student):
+
+        studiengang = student.studiengang
+
+        heute = datetime.today()
+
+        studienbeginn = datetime.strptime(student.studienbeginn, "%Y-%m-%d")
+
+        vergangene_monate = (heute.year - studienbeginn.year) * 12
+        vergangene_monate += heute.month - studienbeginn.month
+
+        erreichte_ects = 0
+        anerkannt_ects = 0
+
+        for semester in studiengang.semester:
+            for modul in semester.module:
+
+                if modul.status == "BESTANDEN":
+
+                    if modul.anerkannt:
+                        anerkannt_ects += modul.ects
+                    else:
+                        erreichte_ects += modul.ects
+
+        if vergangene_monate == 0 or erreichte_ects == 0:
+            return "Noch keine Prognose möglich"
+
+        ects_pro_monat = erreichte_ects / vergangene_monate
+
+        offene_ects = (
+            studiengang.gesamt_ects
+            - erreichte_ects
+            - anerkannt_ects
+        )
+
+        benoetigte_monate = offene_ects / ects_pro_monat
+
+        abschluss_monat = heute.month + round(benoetigte_monate)
+        abschluss_jahr = heute.year
+
+        while abschluss_monat > 12:
+            abschluss_monat -= 12
+            abschluss_jahr += 1
+
+        monate = ["Januar", "Februar", "März", "April","Mai", "Juni", "Juli", "August","September", "Oktober", "November", "Dezember"]
+
+        return f"{monate[abschluss_monat - 1]} {abschluss_jahr}"
+        
