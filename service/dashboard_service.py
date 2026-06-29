@@ -26,7 +26,6 @@ class DashboardService:
         # Mehrfach vorhandene Wahlpflichtmodule sollen nur einmal gezählt werden.
         wahlpflichtbereiche = []
 
-        # Berücksichtigt nur Module mit vorhandener Note.
         for semester in studiengang.semester:
             for modul in semester.module:
 
@@ -52,6 +51,7 @@ class DashboardService:
         notensumme = 0
         anzahl_noten = 0
 
+        # Berücksichtigt nur Module mit vorhandener Note.
         for semester in studiengang.semester:
             for modul in semester.module:
 

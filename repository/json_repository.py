@@ -21,12 +21,13 @@ class JsonRepository:
 
         student.studiengang = studiengang
 
-       
         for semester_daten in daten["studiengang"]["semester"]:
-            # Wandelt den gespeicherten Status-String in einen Enum-Wert um.
+            
             semester = Semester(semester_daten["nummer"])
 
             for modul_daten in semester_daten["module"]:
+
+                # Wandelt den gespeicherten Status-String in einen Enum-Wert um.
                 status = ModulStatus[modul_daten["status"]]
                 
                 modul = Modul(modul_daten["titel"],modul_daten["ects"],status)
