@@ -6,7 +6,7 @@ class DashboardView:
         print()
         print(f"Hi, {student.name}!")
         print()
-        print(f"DASHBOARD")
+        print("DASHBOARD")
         print()
         print(f"{'ECTS:':<22}{erreichte_ects}/{studiengang.gesamt_ects}")
         print(f"{'Module:':<22}{abgeschlossene_module}/{gesamt_module}")
