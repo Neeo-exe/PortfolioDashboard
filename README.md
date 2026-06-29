@@ -40,7 +40,7 @@ Der Prototyp stellt den Studienfortschritt eines Studierenden dar und berechnet:
 
 
 
-python main.py
+1\.	Ein Terminal im Projektordner öffnen.
 
-
+2\.	Das Programm mit folgendem Befehl starten:	-> python main.py
 
