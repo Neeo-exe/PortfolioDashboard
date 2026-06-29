@@ -1,4 +1,5 @@
 from datetime import datetime
+from Klassen.modul_status import ModulStatus
 
 class DashboardService:
 
@@ -8,7 +9,7 @@ class DashboardService:
 
         for semester in studiengang.semester:
             for modul in semester.module:
-                if modul.status == "BESTANDEN":
+                if modul.status == ModulStatus.BESTANDEN:
                     erreichte_ects += modul.ects
 
         fortschritt = (erreichte_ects / studiengang.gesamt_ects) * 100
@@ -31,14 +32,13 @@ class DashboardService:
                         wahlpflichtbereiche.append(modul.wahlpflichtbereich)
                         gesamt_module += 1
 
-                        if modul.status == "BESTANDEN":
+                        if modul.status == ModulStatus.BESTANDEN:
                             abgeschlossene_module += 1
 
                 else:
-
                     gesamt_module += 1
 
-                    if modul.status == "BESTANDEN":
+                    if modul.status == ModulStatus.BESTANDEN:
                         abgeschlossene_module += 1
 
         return abgeschlossene_module, gesamt_module
@@ -76,7 +76,7 @@ class DashboardService:
         for semester in studiengang.semester:
             for modul in semester.module:
 
-                if modul.status == "BESTANDEN":
+                if modul.status == ModulStatus.BESTANDEN:
 
                     if modul.anerkannt:
                         anerkannt_ects += modul.ects
@@ -88,11 +88,9 @@ class DashboardService:
 
         ects_pro_monat = erreichte_ects / vergangene_monate
 
-        offene_ects = (
-            studiengang.gesamt_ects
+        offene_ects = (studiengang.gesamt_ects
             - erreichte_ects
-            - anerkannt_ects
-        )
+            - anerkannt_ects)
 
         benoetigte_monate = offene_ects / ects_pro_monat
 

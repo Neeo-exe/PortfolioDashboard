@@ -5,6 +5,7 @@ from Klassen.studiengang import Studiengang
 from Klassen.semester import Semester
 from Klassen.modul import Modul
 from Klassen.pruefungsleistung import Pruefungsleistung
+from Klassen.modul_status import ModulStatus
 
 class JsonRepository:
 
@@ -23,7 +24,9 @@ class JsonRepository:
             semester = Semester(semester_daten["nummer"])
 
             for modul_daten in semester_daten["module"]:
-                modul = Modul(modul_daten["titel"],modul_daten["ects"],modul_daten["status"])
+                status = ModulStatus[modul_daten["status"]]
+                
+                modul = Modul(modul_daten["titel"],modul_daten["ects"],status)
 
                 modul.anerkannt = modul_daten.get("anerkannt", False)
 

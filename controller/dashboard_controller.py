@@ -1,8 +1,6 @@
 from repository.json_repository import JsonRepository
 from service.dashboard_service import DashboardService
 from view.dashboard_view import DashboardView
-from Klassen.studiengang import Studiengang
-
 
 class DashboardController:
     def __init__(self):
