@@ -10,10 +10,12 @@ from Klassen.modul_status import ModulStatus
 class JsonRepository:
 
     def ladeDaten(self):
-
+        
+        # Lädt die Studiendaten aus der JSON-Datei.
         with open("data/studiengang.json", "r", encoding="utf-8") as datei:
             daten = json.load(datei)
 
+        # Erstellt die Domänenobjekte aus den geladenen JSON-Daten.
         student = StudierendePerson(daten["student"]["name"],daten["student"]["studienbeginn"])
         studiengang = Studiengang(daten["studiengang"]["name"],daten["studiengang"]["gesamt_ects"])
 
@@ -21,6 +23,7 @@ class JsonRepository:
 
        
         for semester_daten in daten["studiengang"]["semester"]:
+            # Wandelt den gespeicherten Status-String in einen Enum-Wert um.
             semester = Semester(semester_daten["nummer"])
 
             for modul_daten in semester_daten["module"]:
@@ -43,5 +46,6 @@ class JsonRepository:
         return student
 
     def speichereDaten(self):
-        """Für zukünftige Erweiterungen vorgesehen."""
+        # Für den aktuellen Dashboard-Prototypen nicht erforderlich.
+        # Die Methode ist für zukünftige Erweiterungen vorgesehen.
         pass

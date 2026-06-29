@@ -4,6 +4,7 @@ class DashboardView:
 
         print()
         print()
+        # Ausgabe der Dashboard Kennzahlen.
         print(f"Hi, {student.name}!")
         print()
         print("DASHBOARD")

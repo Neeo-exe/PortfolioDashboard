@@ -10,6 +10,7 @@ class DashboardController:
 
     def starteDashboard(self):
 
+        # Lädt die Studiendaten und übergibt sie an die Komponente.
         student = self.repository.ladeDaten()
 
         studiengang = student.studiengang
@@ -19,4 +20,5 @@ class DashboardController:
         notendurchschnitt = self.service.berechneNotendurchschnitt(studiengang)
         abschluss = self.service.prognostiziereAbschluss(student)
 
+        # Übergibt die berechneten Kennzahlen an die Darstellung.
         self.view.zeigeDashboard(student,studiengang,erreichte_ects,fortschritt,notendurchschnitt,abgeschlossene_module,gesamt_module,abschluss)
